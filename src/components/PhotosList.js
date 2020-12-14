@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './photolist.css';
 import { createUseStyles } from 'react-jss'
+import { ThemeContext } from '../contexts/ThemeContext';
+
 
 const styles = createUseStyles({
+    container: {
+
+    },
     imgStyle: {
         border: '1px solid green',
         borderRadius: '10px',
@@ -12,9 +17,10 @@ const styles = createUseStyles({
 
 const PhotosList = () => {
     const classes = styles();
+    const theme = useContext(ThemeContext);
 
     return (
-        <div id="photos-list-container">
+        <div style={theme.dark} id="photos-list-container">
             <ul id="photos-list">
                 <li>
                     <h3>title</h3>
